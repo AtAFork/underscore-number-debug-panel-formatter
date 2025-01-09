@@ -3,7 +3,7 @@
   "displayName": "Underscore Number Debug Panel Formatter",
   "description": "A VS Code extension to automatically convert numeric values to use underscore separators in the debug panel UI—covering variables, watch expressions, and collapsed object previews. Improves number readability without any manual intervention.",
   "version": "1.0.0",
-  "publisher": "Adam Tzagournis",
+  "publisher": "AdamTzagournis",
   "engines": {
     "vscode": "^1.93.1"
   },
