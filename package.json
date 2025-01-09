@@ -1,0 +1,41 @@
+{
+  "name": "underscore-number-debug-panel-formatter",
+  "displayName": "Underscore Number Debug Panel Formatter",
+  "description": "A VS Code extension to automatically convert numeric values to use underscore separators in the debug panel UI—covering variables, watch expressions, and collapsed object previews. Improves number readability without any manual intervention.",
+  "version": "1.0.0",
+  "publisher": "Adam Tzagournis",
+  "engines": {
+    "vscode": "^1.93.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AtAFork/underscore-number-debug-panel-formatter.git"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onDebug"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "configuration": {
+      "type": "object",
+      "title": "Underscore Number Debug Panel Formatter Configuration",
+      "properties": {
+        "underscoreNumberDebugPanelFormatter.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable/disable number formatting with underscores in the debug panel UI."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "tsc -p ./"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3",
+    "@types/vscode": "^1.93.1"
+  }
+}

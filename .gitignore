@@ -1,0 +1,22 @@
+# Ignore node modules
+node_modules/
+
+# Ignore compiled output
+out/
+
+# VS Code test artifacts
+.vscode-test/
+
+# Logs
+*.log
+
+# Build artifacts
+*.vsix
+
+# Mac/Windows swap and temp files
+.DS_Store
+Thumbs.db
+
+coverage/
+
+.env
