@@ -2,13 +2,20 @@ import * as vscode from 'vscode';
 
 // Format a single number
 function formatNumberWithUnderscores(num: number): string {
-  return num.toLocaleString('en-US').replace(/,/g, '_');
+  // Split into integer and decimal parts
+  const [intPart, decimalPart] = num.toString().split('.');
+  // Format integer part with thousands separators converted to underscores
+  const formattedInt = Math.abs(parseInt(intPart)).toLocaleString('en-US').replace(/,/g, '_');
+  // Add negative sign back if needed
+  const withSign = intPart.startsWith('-') ? `-${formattedInt}` : formattedInt;
+  // Add back decimal part if it exists
+  return decimalPart ? `${withSign}.${decimalPart}` : withSign;
 }
 
 // Format all numbers found in a string
 function formatAllNumbersInString(str: string): string {
-  // Replace any whole numeric token with underscores
-  return str.replace(/\b\d+\b/g, (match) => {
+  // Replace any numeric token (including decimals and negative numbers)
+  return str.replace(/\b-?\d+(\.\d+)?\b/g, (match) => {
     const parsed = Number(match);
     return isNaN(parsed) ? match : formatNumberWithUnderscores(parsed);
   });
